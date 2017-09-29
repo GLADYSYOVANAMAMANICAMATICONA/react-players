@@ -26,7 +26,7 @@ const Header = React.createClass({//React.createClass---palabra reservada
           <p>TOTAL POINTS:{}</p>
         </div>
 
-        <div className="col-md-4">
+        <div className="col-md-4 stopwatch">
           <p>STOPWATH</p>
           <h1>0</h1>
           <button>ATART</button>
@@ -43,18 +43,16 @@ const PlayerList = React.createClass({//React.createClass---palabra reservada
     return (
       <div className="player">
         {
-          players.map((players, index) => {
+          players.map((players, index) => {//players--objeto del array
             return (
               <div row>
                 {/* <div > */}
                 <div className="player-name col-xs-10" >
-                  <p key={index}> {players.name} </p>
-                  {/* </div> */}
+                  <p key={index}> {players.name} </p></div>
 
-                  {/* <div> */}
                   <div className="player-score col-xs-2">
                     <p key={index}> {players.score} </p></div>
-                </div>
+                
                 {/* </div> */}
 
               </div>
