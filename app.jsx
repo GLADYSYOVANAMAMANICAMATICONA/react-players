@@ -72,12 +72,16 @@ const PlayerForm = React.createClass({//React.createClass---palabra reservada
   //para imprimir en la pagina utilizar el metodo RENDER
   render: function () {
     return (
-      <div className="col-xs-8 add-player-form">
+      <div>
+        <div className="row">
+      <div className="col-xs-12 add-player-form">
         <form className="form">
           <input type="text" />
-          <input type="submit"/>
+          <input type="submit" />
         </form>
 
+      </div>
+      </div>
       </div>
     )
   }
@@ -85,12 +89,11 @@ const PlayerForm = React.createClass({//React.createClass---palabra reservada
 
 const Application = ({ title, players }) => {
   return (
-    <div className="scoreboard">
-      <Header players={players} />
-      <PlayerList players={players} />
-      <PlayerForm />
-
-    </div>
+      <div className="scoreboard">
+        <Header players={players} />
+        <PlayerList players={players} />
+        <PlayerForm players={players}/>
+      </div>
   );
 }
 
