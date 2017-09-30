@@ -41,25 +41,29 @@ const PlayerList = React.createClass({//React.createClass---palabra reservada
   //para imprimir en la pagina utilizar el metodo RENDER
   render: function () {
     return (
-      <div className="player">
+      <div >
         {
           players.map((players, index) => {//players--objeto del array
             return (
-              <div row>
-                {/* <div > */}
-                <div className="player-name col-xs-10" >
-                  <p key={index}> {players.name} </p></div>
+              <div className="player">
+                <div className="player-name " >
+                  <p key={index}> {players.name} </p>
+                </div>
 
-                  <div className="player-score col-xs-2">
-                    <p key={index}> {players.score} </p></div>
-                
-                {/* </div> */}
+                <div className="player-score counter ">
+                  
+                  <button className="counter-action decrement">-</button>
+                  <p key={index}> {players.score} </p>
+                  <button className="counter-action increment">+</button>
+                </div>
 
               </div>
+
             )
           })
         }
-      </div>)
+      </div>
+      )
   }
 })
 
@@ -72,14 +76,14 @@ const PlayerForm = React.createClass({//React.createClass---palabra reservada
     return (
       <div>
         <div className="row">
-      <div className="col-xs-12 add-player-form">
-        <form className="form">
-          <input type="text" />
-          <input type="submit" />
-        </form>
+          <div className="col-xs-12 add-player-form">
+            <form className="form">
+              <input type="text" />
+              <input type="submit" />
+            </form>
 
-      </div>
-      </div>
+          </div>
+        </div>
       </div>
     )
   }
@@ -87,11 +91,11 @@ const PlayerForm = React.createClass({//React.createClass---palabra reservada
 
 const Application = ({ title, players }) => {
   return (
-      <div className="scoreboard">
-        <Header players={players} />
-        <PlayerList players={players} />
-        <PlayerForm players={players}/>
-      </div>
+    <div className="scoreboard">
+      <Header players={players} />
+      <PlayerList players={players} />
+      <PlayerForm players={players} />
+    </div>
   );
 }
 
