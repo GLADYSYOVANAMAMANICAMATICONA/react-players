@@ -16,6 +16,13 @@ let players = [
   },
 ];
 
+function totalPoints(players){
+  let totalPoints=0;
+  for(let player of players)
+  totalPoints+=player.score;
+  return totalPoints;
+}
+
 const Header = React.createClass({//React.createClass---palabra reservada
   //para imprimir en la pagina utilizar el metodo RENDER
   render: function () {
@@ -23,7 +30,7 @@ const Header = React.createClass({//React.createClass---palabra reservada
       <div className="header">
         <div className="col-md-8">
           <p>PLAYERS:{players.length}</p>
-          <p>TOTAL POINTS:{}</p>
+          <p>TOTAL POINTS:{totalPoints(players)}</p>
         </div>
 
         <div className="col-md-4 stopwatch">
